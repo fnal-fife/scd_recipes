@@ -80,11 +80,13 @@ class RMDdConfig(BundlePackage):
         ddurl = "https://metacat.%(lab)s:9443/%(exp)s%(dsuf)s" % rdict
         msurl = "https://metacat.%(lab)s:9443/%(exp)s%(msuf)s" % rdict
         authurl = "https://metacat.%(lab)s:8143/auth/%(exp)s%(asuf)s" % rdict
-        if rdict["exp"] == "mu2e":
-            msurl = ( msurl
-                        .replace("https://metacat", "http://dbweb5")
-                        .replace(":9443",":9094")
-                    )
+        # mu2e is configured on the whole set now, no longer need to 
+        # limit it to dbweb5...
+        # if rdict["exp"] == "mu2e":
+        #    msurl = ( msurl
+        #                .replace("https://metacat", "http://dbweb5")
+        #                .replace(":9443",":9094")
+        #            )
 
         configbase=os.environ.get(
              "XDG_CONFIG_HOME", 
@@ -114,8 +116,9 @@ class RMDdConfig(BundlePackage):
                 rcf.write("""
 [client]
 rucio_host = https://%(exp)s-rucio.%(lab)s
-auth_host = https://auth-%(exp)s-rucio.%(lab)s
+auth_host = https://%(exp)s-rucio.%(lab)s
 
+vo = %(exp)s
 ca_cert = /etc/grid-security/certificates
 account = %(acct)s
 auth_type = x509_proxy
