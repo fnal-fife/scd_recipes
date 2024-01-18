@@ -12,8 +12,8 @@ class Declad(Package):
     homepage = "https://github.com/marcmengel/declad/"
     url = "https://github.com/marcmengel/declad/archive/refs/tags/v2.0.1.tar.gz"
 
+    version("2.0.2", sha256="679faa6923fa3ea89eaa4af1bc92f88616e770e22ac5f87333d32936373eb324")
     version("2.0.1", sha256="8735e8ab894696d3e08614b1a09dc3dd9b97b62d2b1d14e90546f9ef80004376")
-    version("2.0.2", sha256="78784dfa512e1381e8d089e3e7b20a4a333ddaac7606b402cf50f25ef4affacb")
 
 
     def url_for_version(self, version):
