@@ -17,6 +17,7 @@ class RucioClients(PythonPackage):
 
     version("33.2.0", sha256="307480b57feefe827e1fdab64daf1a95fea2f3b3ea1f12913a1d331af695f76f") 
     version("32.4.0", sha256="847f8db44f6f7f2c53cfb596afcefefd310c5791d5fbee86bc487d904c130801") 
+    version("1.31.7", sha256="99f7c981a9aff726f7fbbc0774b53d9df15d6a33798afb14ea0b4b3acaeadc53")
     version("1.29.12", sha256="4b3e11726e75f89a04b513be16a53e5b9f7d33023ae8f0b7aa9032a2a1b8ae75", preferred=True)
 
     depends_on("py-setuptools", type=("build"))

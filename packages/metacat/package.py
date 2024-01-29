@@ -4,6 +4,7 @@
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
 from spack.package import *
+import glob
 
 class Metacat(PythonPackage):
     """"""
@@ -52,4 +53,11 @@ class Metacat(PythonPackage):
     #    with when("~client_only @3.20.1:"):
     #        rename("setup.py","setup_client_only.py")
     #        rename("setup_full.py", "setup.py")
+
+    def setup_run_environment(self, run_env):
+        run_env.prepend_path("PATH", self.spec.prefix.bin)
+        libdir = glob.glob( str(self.spec.prefix.lib) + "/python*/site-packages")[0]
+        run_env.prepend_path("PYTHONPATH", libdir)
+
+
 

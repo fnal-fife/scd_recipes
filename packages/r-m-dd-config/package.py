@@ -118,7 +118,6 @@ class RMDdConfig(BundlePackage):
 rucio_host = https://%(exp)s-rucio.%(lab)s
 auth_host = https://%(exp)s-rucio.%(lab)s
 
-vo = %(exp)s
 ca_cert = /etc/grid-security/certificates
 account = %(acct)s
 auth_type = x509_proxy

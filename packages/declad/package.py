@@ -9,15 +9,15 @@ from spack import *
 class Declad(Package):
     """File Declaration Daemon for MetaCat/Rucio"""
 
-    homepage = "https://github.com/marcmengel/declad/"
-    url = "https://github.com/marcmengel/declad/archive/refs/tags/v2.0.1.tar.gz"
+    homepage = "https://github.com/fermitools/declad/"
+    url = "https://github.com/fermitools/declad/archive/refs/tags/v2.0.1.tar.gz"
 
     version("2.0.2", sha256="679faa6923fa3ea89eaa4af1bc92f88616e770e22ac5f87333d32936373eb324")
     version("2.0.1", sha256="8735e8ab894696d3e08614b1a09dc3dd9b97b62d2b1d14e90546f9ef80004376")
 
 
     def url_for_version(self, version):
-        url = "https://github.com/marcmengel/declad/archive/refs/tags/v{0}.tar.gz"
+        url = "https://github.com/fermitools/declad/archive/refs/tags/v{0}.tar.gz"
         return url.format(version.underscored)
 
     depends_on("py-webpie")

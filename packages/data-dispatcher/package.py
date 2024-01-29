@@ -5,6 +5,7 @@
 
 from spack.package import *
 import os
+import glob
 
 class DataDispatcher(PythonPackage):
     """Data Dispatcher for processing large filesets"""
@@ -41,3 +42,9 @@ class DataDispatcher(PythonPackage):
         # data-dispatcher installs identicaly "ddint" and "dd", but the
         # latter obscures /bin/dd and breaks ifdhc...
         os.unlink(self.spec.prefix.bin.dd)
+
+    def setup_run_environment(self, run_env):
+        run_env.prepend_path("PATH", self.spec.prefix.bin)
+        libdir = glob.glob( str(self.spec.prefix.lib) + "/python*/site-packages")[0]
+        run_env.prepend_path("PYTHONPATH", libdir)
+ 
