@@ -24,5 +24,5 @@ class PyWsdbtools(Package):
     def install(self, spec, prefix):
         install_tree(self.stage.source_path, prefix)
 
-    def setup_environment(self, spack_env, run_env):
+    def setup_run_environment(self, run_env):
         run_env.prepend_path("PYTHONPATH", self.prefix)

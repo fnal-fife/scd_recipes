@@ -4,6 +4,7 @@
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
 from spack import *
+import os
 
 
 class DataDispatcherServer(Package):
@@ -27,7 +28,7 @@ class DataDispatcherServer(Package):
     depends_on("py-pyjwt")
     depends_on("py-pythreader")
     depends_on("py-requests")
-    depends_on("py-stomp-py")
+    depends_on("py-stompymq")
     depends_on("py-webpie")
     depends_on("py-wsdbtools")
     depends_on("metacat")
@@ -38,6 +39,5 @@ class DataDispatcherServer(Package):
             os.symlink("web_server", "server") 
         install_tree(self.stage.source_path, prefix)
 
-    def setup_environment(self, spack_env, run_env):
+    def setup_run_environment(self, run_env):
         run_env.prepend_path("PYTHONPATH", self.prefix)
-        run_env.prepend_path("PATH", self.prefix.bin)
