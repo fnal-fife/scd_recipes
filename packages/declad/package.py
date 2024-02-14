@@ -12,6 +12,7 @@ class Declad(Package):
     homepage = "https://github.com/fermitools/declad/"
     url = "https://github.com/fermitools/declad/archive/refs/tags/v2.0.1.tar.gz"
 
+    version("2.0.3", sha256="7a22da3274c656bccc858b4f47367fbf98c0953175e8a7d80ba21324ac275192")
     version("2.0.2", sha256="679faa6923fa3ea89eaa4af1bc92f88616e770e22ac5f87333d32936373eb324")
     version("2.0.1", sha256="8735e8ab894696d3e08614b1a09dc3dd9b97b62d2b1d14e90546f9ef80004376")
 
