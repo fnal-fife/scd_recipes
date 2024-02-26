@@ -34,3 +34,4 @@ class Declad(Package):
     def setup_run_environment(self, env):
         env.prepend_path("PYTHONPATH", self.prefix)
         env.prepend_path("PATH", self.prefix)
+        env.set("WEBPIE_SCRIPT_HOME", self.prefix)
