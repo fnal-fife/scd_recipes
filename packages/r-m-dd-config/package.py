@@ -31,7 +31,7 @@ except:
 if os.environ.get("GROUP",None) in explist:
     defexp = os.environ.get("GROUP")
 elif os.environ.get("EXPERIMENT",None) in explist:
-    defexp = os.environ.get("GROUP")
+    defexp = os.environ.get("EXPERIMENT")
 elif gname in explist:
     defexp = gname
 else:
