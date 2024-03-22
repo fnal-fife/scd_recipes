@@ -8,6 +8,35 @@ import os
 import sys
 import glob
 
+explist = [
+            "hypot",
+            "annie",
+            "dune",
+            "gm2",
+            "icarus",
+            "lariat",
+            "minerva",
+            "mu2e",
+            "nova",
+            "sbn",
+            "sbnd",
+            "uboone",
+        ]
+try:
+    import grp
+    gname = grp.getgrgid(os.getegid()).gr_name
+except:
+    gname = None
+
+if os.environ.get("GROUP",None) in explist:
+    defexp = os.environ.get("GROUP")
+elif os.environ.get("EXPERIMENT",None) in explist:
+    defexp = os.environ.get("GROUP")
+elif gname in explist:
+    defexp = gname
+else:
+    defexp = "hypot"
+
 class RMDdConfig(BundlePackage):
     """Config for rucio-clients, metacat and data-dispatcher"""
 
@@ -21,23 +50,7 @@ class RMDdConfig(BundlePackage):
     depends_on("rucio-clients")
     depends_on("metacat")
 
-    variant("experiment", 
-        values=[
-            "hypot",
-            "annie",
-            "dune",
-            "gm2",
-            "icarus",
-            "lariat",
-            "minerva",
-            "mu2e",
-            "nova",
-            "sbn",
-            "sbnd",
-            "uboone",
-        ],
-        default="hypot"
-    )
+    variant("experiment", values=explist, default=defexp)
     
     variant("lab", values= ["fnal.gov"], default="fnal.gov")
 
