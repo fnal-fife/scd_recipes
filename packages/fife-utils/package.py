@@ -23,6 +23,7 @@ class FifeUtils(Package):
     depends_on("python", type=("build", "run"))
     depends_on("py-requests", type="run")
     depends_on("sam-web-client", type="run")
+    depends_on("data-dispatcher", type="run")
     depends_on("metacat", type="run")
     depends_on("rucio-clients", type="run")
     depends_on("ifdhc", type="run")
