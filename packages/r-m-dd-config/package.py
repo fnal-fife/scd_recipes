@@ -65,7 +65,7 @@ class RMDdConfig(BundlePackage):
             "msuf": "_meta_prod/app",
             "dsuf": "_dd_prod/data",
             "asuf": "",
-            "acct": self.spec.variants["experiment"].value + "pro",
+            "acct": os.environ.get("GRID_USER", os.environ.get("USER","unk"))
         }
         # irregularities...
         # can set "acct" per experiment here too if needed...
@@ -73,7 +73,7 @@ class RMDdConfig(BundlePackage):
             rdict["msuf"] = "_meta_dev/app"
             rdict["dsuf"] = "_dd/data"
             rdict["asuf"] = "_dev"
-            rdict["acct"] =  os.environ.get("GRID_USER", os.environ.get("USER","unk"))
+
         if rdict["exp"] == "dune":
             rdict["msuf"] = "_meta_prod/app"
             rdict["dsuf"] = "/dd/data"
