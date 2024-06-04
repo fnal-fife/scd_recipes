@@ -34,4 +34,4 @@ class FifeUtils(Package):
     def setup_run_environment(self, run_env):
         run_env.set("FIFE_UTILS_DIR", self.prefix) # for fife_launch... sigh
         run_env.prepend_path("PATH", self.prefix.bin)
-        run_env.prepend_path("PYTHONPATH", self.prefix + "/python")
+        run_env.prepend_path("PYTHONPATH", self.prefix + "/lib")
