@@ -5,6 +5,8 @@
 
 
 from spack.package import *
+import os
+import glob
 
 
 class RucioClients(PythonPackage):
@@ -47,3 +49,30 @@ class RucioClients(PythonPackage):
     depends_on("py-argcomplete", type=("build","run"))
     depends_on("py-python-magic", type=("build","run"))
     depends_on("gfal2-python", type=("build","run"), when="+gfal2")
+
+    #
+    # if we're not building a Spack gfal2, try to put a symlink to the
+    # system one in our site-packages directory.
+    #
+    with when("-gfal2"):
+
+        @run_after("install")
+        def add_system_gfal_link(self):
+            if not os.path.exists("/usr/bin/python3"):
+                 return
+
+            incantation=""" /usr/bin/python3 -E -c "import sys,os; print([x for x in sys.path if os.path.exists(os.path.join(x,'gfal2.so'))>0][0])" """
+
+            with os.popen(incantation) as fd:
+                 src=fd.read().strip()
+
+            try:
+                wc = "/lib*/python*/site-packages"
+                dst = glob.glob(self.prefix + wc )[0]
+            except:
+                return
+
+            if os.path.exists(src) and os.path.exists(dst):
+                os.symlink(os.path.join(src,'gfal2.so'),os.path.join(dst,'gfal2.so'))
+
+
