@@ -13,7 +13,8 @@ class PomsJobsubWrapper(Package):
     homepage = "https://cdcvs.fnal.gov/redmine/projects/poms-client/wiki"
     url = "https://github.com/fermitools/poms/archive/refs/tags/v4_4_2.tar.gz"
 
-    version("4.5.0", sha256="d102dadc10b0c87314fb8b8305533d5cbd1a83fa85572bcf64d216c60bb189f9")
+    version("4.5.0", sha256="7e7ccad6d22aa48e38f9854823c407d68d68d22f41bdb6eae9cd7fda4bc83ec2")
+
 
     def url_for_version(self, version):
         url = "https://github.com/fermitools/poms/archive/refs/tags/wrapper_v{0}.tar.gz"
@@ -31,7 +32,7 @@ class PomsJobsubWrapper(Package):
         env.prepend_path("JOBSUB_EXTRA_JOB_INFO", "{0}/bin/poms_job_info".format(self.spec.prefix))
 
         env.prepend_path("JOBSUB_EXTRA_LINES", 
-           "+FIFE_CATEGORIES='POMS_TASK_ID_{0};POMS_CAMPAIGN_ID_{1};{0}'".format(
+           "+FIFE_CATEGORIES='POMS_TASK_ID_{0};POMS_CAMPAIGN_ID_{1};{2}'".format(
                os.environ.get("POMS_TASK_ID",""), 
                os.environ.get("POMS_CAMPAIGN_ID",""), 
                os.environ.get("POMS_CAMPAIGN_TAGS","") 
