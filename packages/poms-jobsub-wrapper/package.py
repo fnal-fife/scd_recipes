@@ -13,9 +13,11 @@ class PomsJobsubWrapper(Package):
     homepage = "https://cdcvs.fnal.gov/redmine/projects/poms-client/wiki"
     url = "https://github.com/fermitools/poms/archive/refs/tags/v4_4_2.tar.gz"
 
-    version("4.5.0", sha256="d102dadc10b0c87314fb8b8305533d5cbd1a83fa85572bcf64d216c60bb189f9")
+    version("4.5.1", sha256="142b2b5bb8cce8325834f54ed52b65db1619980528a003c98e81c053a13dc051")
+    version("4.5.0", sha256="7e7ccad6d22aa48e38f9854823c407d68d68d22f41bdb6eae9cd7fda4bc83ec2")
 
     def url_for_version(self, version):
+        print("in poms-jobsub-wrapper url_for_version:", str(version))
         url = "https://github.com/fermitools/poms/archive/refs/tags/wrapper_v{0}.tar.gz"
         return url.format(version.underscored)
 
