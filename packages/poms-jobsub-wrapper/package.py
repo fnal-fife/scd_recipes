@@ -33,7 +33,7 @@ class PomsJobsubWrapper(Package):
         env.prepend_path("JOBSUB_EXTRA_JOB_INFO", "{0}/bin/poms_job_info".format(self.spec.prefix))
 
         env.prepend_path("JOBSUB_EXTRA_LINES", 
-           "+FIFE_CATEGORIES='POMS_TASK_ID_{0};POMS_CAMPAIGN_ID_{1};{0}'".format(
+           "+FIFE_CATEGORIES='POMS_TASK_ID_{0};POMS_CAMPAIGN_ID_{1};{2}'".format(
                os.environ.get("POMS_TASK_ID",""), 
                os.environ.get("POMS_CAMPAIGN_ID",""), 
                os.environ.get("POMS_CAMPAIGN_TAGS","") 
