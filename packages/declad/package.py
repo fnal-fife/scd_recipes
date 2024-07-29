@@ -20,8 +20,14 @@ class Declad(Package):
 
 
     def url_for_version(self, version):
-        url = "https://github.com/fermitools/declad/archive/refs/tags/v{0}.tar.gz"
-        return url.format(version.underscored)
+        url = "https://github.com/fermitools/declad/archive/refs/tags/{0}{1}.tar.gz"
+        if version < Version("2.2.0"):
+            prefix = version
+            vstr=version.underscored
+        else:
+            prefix = ""
+            vstr=str(version)
+        return url.format(prefix, vstr)
 
     depends_on("py-webpie")
     depends_on("metacat")
