@@ -12,6 +12,7 @@ class FifeUtils(Package):
     homepage = "https://cdcvs.fnal.gov/redmine/projects/fife-utils/wiki"
     url = "http://cdcvs.fnal.gov/cgi-bin/git_archive.cgi/cvs/projects/fife-utils.v3_6_1.tar"
 
+    version("3.7.3", sha256="793c2a628e4eb63c127435888ff8cb47c0957040d0890758a0dc6d7ed03389e6")
     version("3.7.0", sha256="abba73b57202ab316bd63e94193e7627b403359707ffeddec4ff64e37f68d2ab") 
     version("3.6.1", sha256="3cdddd19ebe62d5ec4291a9d718910e30fc1b7d897a4a73e877d6be3819e9d97")
     version("3.6.0", sha256="31840ba816d1d79c3734d455c47072cf60677c7c72ed390e386973e0711c9513")
