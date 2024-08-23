@@ -45,6 +45,7 @@ class RMDdConfig(BundlePackage):
     maintainers = ["marcmengel"]
 
     version("1.0")
+    version("1.1")
 
     depends_on("data-dispatcher")
     depends_on("rucio-clients")
