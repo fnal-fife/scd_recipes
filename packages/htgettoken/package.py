@@ -25,12 +25,12 @@ class Htgettoken(PythonPackage):
     depends_on("py-setuptools", type="build", when="@1.16:")
 
     depends_on("py-gssapi", when="@1.16:")
-    depends_on("py-paramiko", when="@1.16:"))
-    depends_on("py-urllib3", when="@1.16:"))
+    depends_on("py-paramiko", when="@1.16:")
+    depends_on("py-urllib3", when="@1.16:")
 
-    depends_on("py-m2crypto", when="@:1.15"))
-    depends_on("py-pyopenssl", when="@:1.15"))
-    depends_on("py-kerberos", when="@:1.15"))
+    depends_on("py-m2crypto", when="@:1.15")
+    depends_on("py-pyopenssl", when="@:1.15")
+    depends_on("py-kerberos", when="@:1.15")
 
     depends_on("jq")
     depends_on("coreutils", type="run")  # for 'base64'
