@@ -12,13 +12,14 @@ class FifeUtils(Package):
     homepage = "https://cdcvs.fnal.gov/redmine/projects/fife-utils/wiki"
     url = "http://cdcvs.fnal.gov/cgi-bin/git_archive.cgi/cvs/projects/fife-utils.v3_6_1.tar"
 
-    version("3.7.0", sha256="abba73b57202ab316bd63e94193e7627b403359707ffeddec4ff64e37f68d2ab") 
-    version("3.6.1", sha256="3cdddd19ebe62d5ec4291a9d718910e30fc1b7d897a4a73e877d6be3819e9d97")
+    version("3.7.2", sha256="2b4344d821e5650eda011e66375c47f808b5584df4ae2a591f345a94cc45711b")
+    version("3.7.0", sha256="8d0efe2e007b0bb821accfad85ad455026fbe59b19f27c80edeb224db66cc74c")
+    version("3.6.1", sha256="7bb1e2aeb703cb9b3ed098416c035509be85896f3891bc87afa14e21fa7132f5")
     version("3.6.0", sha256="31840ba816d1d79c3734d455c47072cf60677c7c72ed390e386973e0711c9513")
 
     def url_for_version(self, version):
-        url = "https://cdcvs.fnal.gov/cgi-bin/git_archive.cgi/cvs/projects/fife_utils.v{0}.tbz2"
-        return url.format(version.underscored)
+        urlf = "https://cdcvs.fnal.gov/cgi-bin/git_archive.cgi/cvs/projects/fife_utils.v{0}.tar"
+        return urlf.format(version.underscored)
 
     depends_on("python", type=("build", "run"))
     depends_on("py-requests", type="run")
