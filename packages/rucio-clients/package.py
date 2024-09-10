@@ -13,10 +13,11 @@ class RucioClients(PythonPackage):
     """Client interface to Rucio."""
 
     homepage = "https://rucio.cern.ch"
-    pypi = "rucio-clients/rucio-clients-1.30.0.tar.gz"
+    pypi = "rucio_clients/rucio_clients-1.30.0.tar.gz"
 
     # maintainers = ["marcmengel","bari12"]
 
+    version("35.2.1", sha256="244b2219e4e8e3bc77a347536350ffe3e82be4e8647e8f90df48d233059b5fc5")
     version("34.4.3", sha256="f3fa99f647e5efa7b81167d148254b6ca45bd5fc636f70f78711c10c66c083a1")
     version("33.3.0", sha256="08c32a046ae7695f5785e712f7208633656e451b312eb518fd4a5b9c9736dd67")
     version("33.2.0", sha256="307480b57feefe827e1fdab64daf1a95fea2f3b3ea1f12913a1d331af695f76f") 
@@ -49,6 +50,7 @@ class RucioClients(PythonPackage):
     depends_on("py-argcomplete", type=("build","run"))
     depends_on("py-python-magic", type=("build","run"))
     depends_on("gfal2-python", type=("build","run"), when="+gfal2")
+    depends_on("py-typing-extensions",  type=("build","run"))
 
     #
     # if we're not building a Spack gfal2, try to put a symlink to the
