@@ -12,6 +12,7 @@ class SamWebClient(Package):
     homepage = "https://cdcvs.fnal.gov/redmine/projects/sam-web-client/wiki"
     url = "http://cdcvs.fnal.gov/cgi-bin/git_archive.cgi/cvs/projects/sam-web-client.v3_0.tar"
 
+    version("3.6", sha256="ba1f59f2ca663271ad69b6aa96ebb4d664055c1af06c3ca986cd918aed0a9e2d") 
     version("3.5", sha256="840241c09a10669c1b7f28d178baa8b24ae6377aaaf7e4d619ad234182cf1214") 
     version("2.0", sha256="9a2729e01a0e143f8d30fdd17a40038e088a86931b14950dcb370746af7e9cba")
     version("2.1", sha256="d2e875b44ea25fa3a681f24e15d6f525c3be3c9ccc54e162981814dbccaf801a")
