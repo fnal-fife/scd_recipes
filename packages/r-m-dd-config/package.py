@@ -46,6 +46,7 @@ class RMDdConfig(BundlePackage):
 
     version("1.0")
     version("1.1")
+    version("1.2")
 
     depends_on("data-dispatcher")
     depends_on("rucio-clients")

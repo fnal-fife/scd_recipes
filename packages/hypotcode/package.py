@@ -12,6 +12,7 @@ class Hypotcode(Package):
     homepage = "https://fifewiki.fnal.gov/hypot"
     url = "http://cdcvs.fnal.gov/cgi-bin/git_archive.cgi/cvs/projects/prod_mgmt_db-hypotcode.v2_0.tar"
 
+    version("2.1", sha256="96261652218aa87366fcfa2182c3a209b49314889c860d517d602c849927bf5a")
     version("1.2", sha256="c92eb7f743070621e40681b2cfb35ebd9b09886625bb7e458da4011c3286c37a")
     version("1.1", sha256="0dd8d6e486b3f0d5ce5a9094d5ac708a59ab437e03abaa029b2f88764db4576e")
 
