@@ -38,6 +38,7 @@ class Voms(AutotoolsPackage):
     depends_on("libtool", type="build")
     depends_on("m4", type="build")
     depends_on("gsoap", type=("build", "run"))
+    depends_on("expat", type=("build", "run"))
 
     def autoreconf(self, spec, prefix):
         # FIXME: Modify the autoreconf method as necessary
@@ -62,4 +63,7 @@ class Voms(AutotoolsPackage):
     def setup_build_environment(self, env):
         env.prepend_path("PATH", self.spec["gsoap"].prefix.bin)
         env.append_flags("CPPFLAGS", "-I{0}".format(self.spec["gsoap"].prefix.include))
+        env.append_flags("LDFAGS", "-L{0}".format(self.spec["gsoap"].prefix.lib))
+        env.append_flags("CPPFLAGS", "-I{0}".format(self.spec["expat"].prefix.include))
+        env.append_flags("LDFAGS", "-L{0}".format(self.spec["expat"].prefix.lib))
         env.append_flags("LDFLAGS", "-lz")

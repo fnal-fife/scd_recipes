@@ -10,11 +10,14 @@ class Metacat(PythonPackage):
     """"""
 
     homepage = "https://metacat.readthedocs.io/en/latest/index.html"
-    pypi = "metacat/metacat-3.20.0.tar.gz"
-    git = "https://github.com/ivmfnal/metacat.git"
+    pypi = "metacat-client/metacat_client-4.0.1.tar.gz"
+    git = "https://github.com/fermitools/metacat.git"
 
     maintainers = ["marcmengel", "ivmfnal"]
 
+    version("4.0.1", sha256="477271395ad2a12de716bf6ff8cbe5e21392e6fbfa4ad94b6fa7141aa8c4b9ba")
+    version("4.0.0", sha256="d453a628e6b0b623234254e0ccb5ad9bad826433cbffe615f146a7f433273041")
+    version("3.43.0", sha256="536114ad6a68f199335ae2de6f5e1edc698b2f74c7988a992b21c48add018df8") 
     version("3.42.1", sha256="af26f91dae527ae102e9229357a392ffad6b790768b8575ba7fcb3fe5285f4b7")
     version("3.38.0", sha256="2d3a5313590db47a98cea25f68947325203fb4b466751f2c2c841172027e666a")
     version("3.37.0", sha256="af47c1ef1ad0ee343c7e785342298247dbf2d0f8062d3f38a23e8808b1c0a808")

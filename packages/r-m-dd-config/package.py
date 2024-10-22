@@ -8,21 +8,7 @@ import os
 import sys
 import glob
 
-class RMDdConfig(BundlePackage):
-    """Config for rucio-clients, metacat and data-dispatcher"""
-
-    homepage = "https://fifewiki.fnal.gov/"
-
-    maintainers = ["marcmengel"]
-
-    version("1.0")
-
-    depends_on("data-dispatcher")
-    depends_on("rucio-clients")
-    depends_on("metacat")
-
-    variant("experiment", 
-        values=[
+explist = [
             "hypot",
             "annie",
             "dune",
@@ -35,9 +21,38 @@ class RMDdConfig(BundlePackage):
             "sbn",
             "sbnd",
             "uboone",
-        ],
-        default="hypot"
-    )
+        ]
+try:
+    import grp
+    gname = grp.getgrgid(os.getegid()).gr_name
+except:
+    gname = None
+
+if os.environ.get("GROUP",None) in explist:
+    defexp = os.environ.get("GROUP")
+elif os.environ.get("EXPERIMENT",None) in explist:
+    defexp = os.environ.get("EXPERIMENT")
+elif gname in explist:
+    defexp = gname
+else:
+    defexp = "hypot"
+
+class RMDdConfig(BundlePackage):
+    """Config for rucio-clients, metacat and data-dispatcher"""
+
+    homepage = "https://fifewiki.fnal.gov/"
+
+    maintainers = ["marcmengel"]
+
+    version("1.0")
+    version("1.1")
+    version("1.2")
+
+    depends_on("data-dispatcher")
+    depends_on("rucio-clients")
+    depends_on("metacat")
+
+    variant("experiment", values=explist, default=defexp)
     
     variant("lab", values= ["fnal.gov"], default="fnal.gov")
 
@@ -52,7 +67,7 @@ class RMDdConfig(BundlePackage):
             "msuf": "_meta_prod/app",
             "dsuf": "_dd_prod/data",
             "asuf": "",
-            "acct": self.spec.variants["experiment"].value + "pro",
+            "acct": os.environ.get("GRID_USER", os.environ.get("USER","unk"))
         }
         # irregularities...
         # can set "acct" per experiment here too if needed...
@@ -60,7 +75,7 @@ class RMDdConfig(BundlePackage):
             rdict["msuf"] = "_meta_dev/app"
             rdict["dsuf"] = "_dd/data"
             rdict["asuf"] = "_dev"
-            rdict["acct"] =  os.environ.get("GRID_USER", os.environ.get("USER","unk"))
+
         if rdict["exp"] == "dune":
             rdict["msuf"] = "_meta_prod/app"
             rdict["dsuf"] = "/dd/data"
