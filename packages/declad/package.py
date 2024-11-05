@@ -43,6 +43,7 @@ class Declad(Package):
     depends_on("sam-web-client")
     depends_on("rucio-clients")
     depends_on("py-jinja2")
+    depends_on("py-fadvise")
 
     def install(self, spec, prefix):
         with working_dir("declad"):

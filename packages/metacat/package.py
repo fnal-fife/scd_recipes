@@ -49,6 +49,7 @@ class Metacat(PythonPackage):
     depends_on("py-pyyaml", type=("build", "run"), when="~client_only")
     depends_on("py-lark", type=("build", "run"), when="~client_only")
     depends_on("py-scitokens", type=("build", "run"), when="~client_only")
+    depends_on("py-wsdbtools", type=("build", "run"))
     
 
     #@run_before("install")
