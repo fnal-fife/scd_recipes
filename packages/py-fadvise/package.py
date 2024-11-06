@@ -16,7 +16,7 @@ class PyFadvise(PythonPackage):
 
     # See https://spdx.org/licenses/ for a list. Upon manually verifying
     # the license, set checked_by to your Github username.
-    license("BSD-3-Clause-Clear", checked_by="marcmengel")
+    license("BSD-3-Clause-Clear" ) #, checked_by="marcmengel"
 
     version("6.0.1", sha256="d3122c6b7f59a5f1c7ac628f42766bed0426cab2bff3d28c1f84580d51fb623a")
 
