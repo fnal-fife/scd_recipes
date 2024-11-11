@@ -12,11 +12,11 @@ class PyFadvise(PythonPackage):
     homepage = "https://chris-lamb.co.uk/projects/python-fadvise"
     pypi = "fadvise/fadvise-6.0.1.tar.gz"
 
-    maintainers("marcmengel", "github_user2")
+    maintainers("marcmengel")
 
     # See https://spdx.org/licenses/ for a list. Upon manually verifying
     # the license, set checked_by to your Github username.
-    license("BSD-3-Clause-Clear", checked_by="marcmengel")
+    license("BSD-3-Clause-Clear")
 
     version("6.0.1", sha256="d3122c6b7f59a5f1c7ac628f42766bed0426cab2bff3d28c1f84580d51fb623a")
 
