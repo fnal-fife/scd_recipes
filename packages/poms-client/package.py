@@ -30,3 +30,5 @@ class PomsClient(Package):
         run_env.set("CURL_CA_PATH", "/etc/grid-security/certificates")
         run_env.prepend_path("PATH", self.prefix.bin)
         run_env.prepend_path("PYTHONPATH", self.prefix + "/python")
+        run_env.set('WEB_CONFIG', self.prefix + "/bin/client.cfg")
+
