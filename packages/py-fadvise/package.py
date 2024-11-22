@@ -12,7 +12,7 @@ class PyFadvise(PythonPackage):
     homepage = "https://chris-lamb.co.uk/projects/python-fadvise"
     pypi = "fadvise/fadvise-6.0.1.tar.gz"
 
-    maintainers("marcmengel", "github_user2")
+    maintainers("marcmengel")
 
     # See https://spdx.org/licenses/ for a list. Upon manually verifying
     # the license, set checked_by to your Github username.
@@ -27,7 +27,5 @@ class PyFadvise(PythonPackage):
     depends_on("py-setuptools", type="build")
 
     def config_settings(self, spec, prefix):
-        # FIXME: Add configuration settings to be passed to the build backend
-        # FIXME: If not needed, delete this function
         settings = {}
         return settings
