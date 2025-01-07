@@ -16,6 +16,7 @@ class Declad(Package):
     version("main", branch="main")
     version("develop", branch="main")
 
+    version("2.3.4", sha256="0f25ffc4f6c9110fae3b85330ac27065cb963b8662df134136dbdfd0aa4fd94f")
     version("2.3.3", sha256="826b296b6e600dd10ec5ed5074bc9ad8c55d23d7e2e3972ca53c00b8b5a1f01a")
     version("2.3.2", sha256="33ae64e7fed2741a76d9c3cf0eebae4c08f9136c8321de31bb0bb55e37b47438") 
     version("2.3.1", sha256="a965630ffade2dbbe2e31fba1a3a8e574544094ac0c2ca0a06ade46727d8f988") 
