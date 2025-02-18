@@ -49,8 +49,8 @@ class Metacat(PythonPackage):
     depends_on("py-requests", type=("build", "run"))
     depends_on("py-pythreader@2.8.0:", type=("build", "run"))
     depends_on("py-pyyaml", type=("build", "run"), when="~client_only")
-    depends_on("py-lark", type=("build", "run"), when="~client_only")
     depends_on("py-scitokens", type=("build", "run"), when="~client_only")
+    depends_on("py-lark", type=("build", "run"))
     depends_on("py-wsdbtools", type=("build", "run"))
     
 
