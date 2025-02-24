@@ -21,6 +21,7 @@ class K5arc(Package):
     cvs = ":pserver:anonymous@cdcvs.fnal.gov:/cvs/oss%module=k5arc"
     maintainers = ["marcmengel"]
 
+    version("v1_5")
     version("v1_4")
     version("v1_2")
     version("v1_1")
