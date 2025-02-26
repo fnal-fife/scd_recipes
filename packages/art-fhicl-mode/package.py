@@ -14,7 +14,6 @@ class ArtFhiclMode(Package):
 
     version("0.4", sha256="1445d9ec14f75015b7861f5f38051d7e15f4d061e2eaeb6e70a0f672da5defea")
 
-
     def url_for_version(self, version):
         url = "https://github.com/knoepfel/art-fhicl/archive/refs/tags/{0}.tar.gz"
         return url.format(version)

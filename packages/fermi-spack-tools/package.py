@@ -16,7 +16,7 @@ class FermiSpackTools(Package):
     version("2.23.0", branch="v2_23_0", git=git)
 
     def url_for_version(self, version):
-        fmt="https://github.com/FNALssi/fermi-spack-tools/archive/refs/tags/v{0}.tar.gz"
+        fmt = "https://github.com/FNALssi/fermi-spack-tools/archive/refs/tags/v{0}.tar.gz"
         return fmt.format(version.underscored)
 
     depends_on("python", type=("build", "run"))

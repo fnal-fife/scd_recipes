@@ -28,8 +28,7 @@ class K5arc(Package):
 
     def patch(self):
         for f in glob.glob("src/*.sh"):
-            filter_file( "/usr/krb5/bin/klist", "/usr/bin/klist", f)
-
+            filter_file("/usr/krb5/bin/klist", "/usr/bin/klist", f)
 
     def setup_build_environment(self, env):
         env.set("K5ARC_DIR", self.stage.source_path)
@@ -39,8 +38,8 @@ class K5arc(Package):
         env.prepend_path("PATH", self.spec.prefix.bin)
 
     def install(self, spec, prefix):
-        #sh = which("sh")
-        #sh("ups/init")
+        # sh = which("sh")
+        # sh("ups/init")
         install_tree(self.stage.source_path, prefix, ignore=ignore_CVS)
         mkdir(prefix.bin)
         os.symlink("../src/k5arc.sh", prefix.bin.k5arc)

@@ -7,6 +7,7 @@ from spack.package import *
 import os
 import glob
 
+
 class DataDispatcher(PythonPackage):
     """Data Dispatcher for processing large filesets"""
 
@@ -16,9 +17,7 @@ class DataDispatcher(PythonPackage):
 
     maintainers = ["marcmengel", "ivmfnal"]
 
-    version("1.25.1m",
-       sha256="100b5e210118fb817bcfd3df91e9920d29423d6690452419e823f611a711cb52", 
-       url="https://github.com/marcmengel/data_dispatcher/archive/refs/tags/v1.21.1m.tar.gz")
+    version("1.25.1m", sha256="100b5e210118fb817bcfd3df91e9920d29423d6690452419e823f611a711cb52", url="https://github.com/marcmengel/data_dispatcher/archive/refs/tags/v1.21.1m.tar.gz")
 
     version("1.27.0", sha256="272d5719db3834ced9a5c5a1c97cb815b4def8e8c2d4f4f44f3255489600d0c1")
     version("1.26.0", sha256="c4492b7b2f20761c8f4e4e8f746088b75ff953f49ec3c179bab42064778d2edf")
@@ -32,7 +31,7 @@ class DataDispatcher(PythonPackage):
     version("1.15.0", sha256="aede4a3ec1a3ee79f8bd38448fd485e513ca303414d3f96cff74b72ae3c763e5")
     version("main", branch="main")
 
-    # the 3.7 versioning actually comes from the metacat docs... 
+    # the 3.7 versioning actually comes from the metacat docs...
     depends_on("python@3.7:", type=("build", "run"))
     depends_on("py-setuptools", type="build")
     depends_on("py-requests", type=("build", "run"))
@@ -46,6 +45,5 @@ class DataDispatcher(PythonPackage):
 
     def setup_run_environment(self, run_env):
         run_env.prepend_path("PATH", self.spec.prefix.bin)
-        libdir = glob.glob( str(self.spec.prefix.lib) + "/python*/site-packages")[0]
+        libdir = glob.glob(str(self.spec.prefix.lib) + "/python*/site-packages")[0]
         run_env.prepend_path("PYTHONPATH", libdir)
- 

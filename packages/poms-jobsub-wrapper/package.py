@@ -27,28 +27,22 @@ class PomsJobsubWrapper(Package):
 
     def install(self, spec, prefix):
         mkdir(prefix.bin)
-        install(self.stage.source_path + '/poms_jobsub_wrapper/bin/poms_job_info', prefix.bin)
+        install(self.stage.source_path + "/poms_jobsub_wrapper/bin/poms_job_info", prefix.bin)
 
     def setup_run_environment(self, env):
         env.prepend_path("JOBSUB_EXTRA_JOB_INFO", "{0}/bin/poms_job_info".format(self.spec.prefix))
 
-        env.prepend_path("JOBSUB_EXTRA_LINES", 
-           "+FIFE_CATEGORIES='POMS_TASK_ID_{0};POMS_CAMPAIGN_ID_{1};{2}'".format(
-               os.environ.get("POMS_TASK_ID",""), 
-               os.environ.get("POMS_CAMPAIGN_ID",""), 
-               os.environ.get("POMS_CAMPAIGN_TAGS","") 
-        ))
-        env.prepend_path("JOBSUB_EXTRA_LINES", "+POMS_TASK_ID={0}".format(os.environ.get("POMS_TASK_ID", "") ), ",")
-        env.prepend_path("JOBSUB_EXTRA_LINES", "+POMS_CAMPAIGN_ID={0}".format(os.environ.get("POMS_CAMPAIGN_ID", "") ), ",")
-        env.prepend_path("JOBSUB_EXTRA_LINES", "+POMS_LAUNCHER={0}".format(os.environ.get("POMS_LAUNCHER", "") ), ",")
-        env.prepend_path("JOBSUB_EXTRA_LINES", "+POMS_CAMPAIGN_NAME='{0}'".format(os.environ.get("POMS_CAMPAIGN_NAME", "") ), ",")
-        env.prepend_path("JOBSUB_EXTRA_LINES", "+POMS4_CAMPAIGN_STAGE_ID={0}".format(os.environ.get("POMS4_CAMPAIGN_STAGE_ID", "") ), ",")
+        env.prepend_path("JOBSUB_EXTRA_LINES", "+FIFE_CATEGORIES='POMS_TASK_ID_{0};POMS_CAMPAIGN_ID_{1};{2}'".format(os.environ.get("POMS_TASK_ID", ""), os.environ.get("POMS_CAMPAIGN_ID", ""), os.environ.get("POMS_CAMPAIGN_TAGS", "")))
+        env.prepend_path("JOBSUB_EXTRA_LINES", "+POMS_TASK_ID={0}".format(os.environ.get("POMS_TASK_ID", "")), ",")
+        env.prepend_path("JOBSUB_EXTRA_LINES", "+POMS_CAMPAIGN_ID={0}".format(os.environ.get("POMS_CAMPAIGN_ID", "")), ",")
+        env.prepend_path("JOBSUB_EXTRA_LINES", "+POMS_LAUNCHER={0}".format(os.environ.get("POMS_LAUNCHER", "")), ",")
+        env.prepend_path("JOBSUB_EXTRA_LINES", "+POMS_CAMPAIGN_NAME='{0}'".format(os.environ.get("POMS_CAMPAIGN_NAME", "")), ",")
+        env.prepend_path("JOBSUB_EXTRA_LINES", "+POMS4_CAMPAIGN_STAGE_ID={0}".format(os.environ.get("POMS4_CAMPAIGN_STAGE_ID", "")), ",")
         env.prepend_path("JOBSUB_EXTRA_LINES", "+POMS4_CAMPAIGN_STAGE_NAME='{0}'".format(os.environ.get("POMS4_CAMPAIGN_STAGE_NAME", "")), ",")
-        env.prepend_path("JOBSUB_EXTRA_LINES", "+POMS4_CAMPAIGN_ID={0}".format(os.environ.get("POMS4_CAMPAIGN_ID", "") ), ",")
-        env.prepend_path("JOBSUB_EXTRA_LINES", "+POMS4_CAMPAIGN_NAME='{0}'".format(os.environ.get("POMS4_CAMPAIGN_NAME", "") ), ",")
-        env.prepend_path("JOBSUB_EXTRA_LINES", "+POMS4_SUBMISSION_ID={0}".format(os.environ.get("POMS4_SUBMISSION_ID", "") ), ",")
-        env.prepend_path("JOBSUB_EXTRA_LINES", "+POMS4_CAMPAIGN_TYPE='{0}'".format(os.environ.get("POMS4_CAMPAIGN_TYPE", "") ), ",")
-        env.prepend_path("JOBSUB_EXTRA_LINES", "+POMS4_TEST_LAUNCH={0}".format(os.environ.get("POMS4_TEST_LAUNCH", "") ), ",")
+        env.prepend_path("JOBSUB_EXTRA_LINES", "+POMS4_CAMPAIGN_ID={0}".format(os.environ.get("POMS4_CAMPAIGN_ID", "")), ",")
+        env.prepend_path("JOBSUB_EXTRA_LINES", "+POMS4_CAMPAIGN_NAME='{0}'".format(os.environ.get("POMS4_CAMPAIGN_NAME", "")), ",")
+        env.prepend_path("JOBSUB_EXTRA_LINES", "+POMS4_SUBMISSION_ID={0}".format(os.environ.get("POMS4_SUBMISSION_ID", "")), ",")
+        env.prepend_path("JOBSUB_EXTRA_LINES", "+POMS4_CAMPAIGN_TYPE='{0}'".format(os.environ.get("POMS4_CAMPAIGN_TYPE", "")), ",")
+        env.prepend_path("JOBSUB_EXTRA_LINES", "+POMS4_TEST_LAUNCH={0}".format(os.environ.get("POMS4_TEST_LAUNCH", "")), ",")
         env.prepend_path("JOBSUB_EXTRA_ENVIRONMENT", "POMS_CAMPAIGN_ID", ",")
         env.prepend_path("JOBSUB_EXTRA_ENVIRONMENT", "POMS_TASK_ID", ",")
-

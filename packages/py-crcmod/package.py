@@ -12,8 +12,6 @@ class PyCrcmod(PythonPackage):
     homepage = "http://crcmod.sourceforge.net/"
     url = "https://pypi.io/packages/source/c/crcmod/crcmod-1.7.tar.gz"
 
-    version(
-        "1.7", sha256="dc7051a0db5f2bd48665a990d3ec1cc305a466a77358ca4492826f41f283601e"
-    )
+    version("1.7", sha256="dc7051a0db5f2bd48665a990d3ec1cc305a466a77358ca4492826f41f283601e")
 
     depends_on("py-setuptools", type="build")

@@ -17,8 +17,7 @@ class DataDispatcherServer(Package):
     version("1.26.4", sha256="1bd1b5433a7e3d9b29917510531225abee17e8690d87d9eb0ccff2ad58cd72c9")
     version("1.26.2", sha256="0eaf99e65b5d5664a6524f81d31f387324bbe881570a0421532f24cefb7169c2")
     version("1.26.0", sha256="2d56d4c688bcd44c72887fa009875935402890d69c872399fe3112e4096483f7")
-    version("main",   branch="main")
-
+    version("main", branch="main")
 
     def url_for_version(self, version):
         url = "https://github.com/fermitools/data_dispatcher/archive/refs/tags/{0}.tar.gz"
@@ -38,7 +37,7 @@ class DataDispatcherServer(Package):
 
     def install(self, spec, prefix):
         with working_dir(self.stage.source_path):
-            os.symlink("web_server", "server") 
+            os.symlink("web_server", "server")
         install_tree(self.stage.source_path, prefix)
 
     def setup_run_environment(self, run_env):

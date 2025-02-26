@@ -7,8 +7,8 @@ from spack.package import *
 
 
 class PyWebpie(PythonPackage):
-    """ WebPie (another way of spelling web-py) is a web application 
-        development framework for Python based on the WSGI standard.  """
+    """WebPie (another way of spelling web-py) is a web application
+    development framework for Python based on the WSGI standard."""
 
     homepage = "https://github.com/fermitools/webpie"
     pypi = "webpie/webpie-5.16.3.tar.gz"

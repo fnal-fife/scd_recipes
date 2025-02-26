@@ -42,17 +42,17 @@ class Htgettoken(PythonPackage):
     depends_on("coreutils", type="run")  # for 'base64'
 
     with when("@:1.15"):
+
         def install(self, spec, prefix):
             mkdir(prefix.bin)
             mkdir(prefix.man)
             pip = which("pip3")
             pip("install", "--prefix", prefix, ".")
-            #filter_file("#!/usr/bin/python3", "#!/usr/bin/env python3", "htgettoken")
-            #install("htgettoken", prefix.bin)
-            #install("httokendecode", prefix.bin)
-            #install("htgettoken.1", prefix.man)
+            # filter_file("#!/usr/bin/python3", "#!/usr/bin/env python3", "htgettoken")
+            # install("htgettoken", prefix.bin)
+            # install("httokendecode", prefix.bin)
+            # install("htgettoken.1", prefix.man)
 
     def setup_environment(self, spack_env, run_env):
         run_env.prepend_path("PATH", self.prefix.bin)
-        run_env.prepend_path("PYTHONPATH", self.prefix+"lib/python3.9/site-packages")
-
+        run_env.prepend_path("PYTHONPATH", self.prefix + "lib/python3.9/site-packages")
