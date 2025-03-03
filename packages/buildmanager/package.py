@@ -19,7 +19,6 @@ class Buildmanager(Package):
 
     version("1.12", sha256="8344af340bd475f88920484bd07237beeb96a36362005d9dc1259635111dca80")
 
-
     depends_on("tk")
     depends_on("expect")
 

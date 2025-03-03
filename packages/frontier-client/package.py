@@ -42,11 +42,11 @@ class FrontierClient(MakefilePackage):
     depends_on("python")
 
     license("BSD attribution")
+
     def url_for_version(self, version):
         urlf = "https://github.com/fermitools/frontier/archive/refs/tags/v{}.tar.gz"
         return urlf.format(version.underscored)
 
-    
     build_directory = "client"
 
     # for some reason with dependencies, have to run the build
@@ -55,7 +55,7 @@ class FrontierClient(MakefilePackage):
     @run_before("build")
     def double_make(self):
         print("=-=-=-=-=  initial extra builds starting =-=-=-=-=")
-        for i in [1,2,3]:
+        for i in [1, 2, 3]:
             try:
                 print("=-=- try %d =-=-=" % i)
                 self.build(self.spec, self.spec.prefix)
@@ -66,8 +66,8 @@ class FrontierClient(MakefilePackage):
 
     @property
     def build_targets(self):
-       spec = self.spec
-       return [
+        spec = self.spec
+        return [
             "PACPARSER_DIR={}".format(spec["pacparser"].prefix),
             "OPENSSL_DIR={}".format(spec["openssl"].prefix),
             "ZLIB_DIR={}".format(spec["zlib"].prefix),
@@ -76,12 +76,8 @@ class FrontierClient(MakefilePackage):
 
     @property
     def install_targets(self):
-        return [ 
-            "distdir={}".format(prefix),
-            "install"
-        ]
-      
-      
+        return ["distdir={}".format(prefix), "install"]
+
     def edit(self, spec, prefix):
         # FIXME: Edit the Makefile if necessary
         # FIXME: If not needed delete this function

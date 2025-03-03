@@ -5,6 +5,7 @@
 
 from spack.package import *
 
+
 class Kx509(Package):
     """kx509 - get an X.509 certificate for Fermilab using kerberos"""
 
@@ -16,7 +17,7 @@ class Kx509(Package):
     version("3.1.0", sha256="ada03d41bc77e7723eafbe4382e8a3017ca00c1ea68efd7bacc61734328d4652")
     version("3.0.0", sha256="80fa4636ca0840b87966623470d84fad9ab390ff39e3dde59a50f3706759e116")
 
-    depends_on('cigetcert', type='run')
+    depends_on("cigetcert", type="run")
 
     def url_for_version(self, version):
         url = "https://cdcvs.fnal.gov/cgi-bin/git_archive.cgi/cvs/projects/dcafi.kx509-v{0}.tbz2"

@@ -10,9 +10,7 @@ class PySamCp(PythonPackage):
     """sam_cp replacement"""
 
     homepage = "https://cdcvs.fnal.gov/redmine/projects/sam-cp"
-    url = (
-        "https://cdcvs.fnal.gov/cgi-bin/git_archive.cgi/cvs/projects/sam-cp.v9_0_8.tar"
-    )
+    url = "https://cdcvs.fnal.gov/cgi-bin/git_archive.cgi/cvs/projects/sam-cp.v9_0_8.tar"
 
     version(
         "9_0_8",

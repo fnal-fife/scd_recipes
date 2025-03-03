@@ -23,7 +23,7 @@ class SamMiscEnstoreUpdater(Package):
     depends_on("python@3.3:", type=("build", "run"), when="@1.1:")
     depends_on("py-pysqlite3", type=("build", "run"))
     depends_on("py-psycopg2", type=("build", "run"))
-    depends_on("encp", type=("run",)) 
+    depends_on("encp", type=("run",))
 
     def install(self, spec, prefix):
         install_tree(self.stage.source_path, prefix)

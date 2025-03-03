@@ -5,6 +5,7 @@
 
 from spack.package import *
 
+
 class Nedit(MakefilePackage):
     """FIXME: Put a proper description of your package here."""
 
@@ -26,17 +27,13 @@ class Nedit(MakefilePackage):
     depends_on("pkg-config", type="build")
 
     def patch(self):
-        filter_file(
-             r"\$\(shell pkg-config --cflags xft fontconfig\)",
-            "$(shell pkg-config --cflags xft fontconfig freetype2)",
-            "makefiles/Makefile.linux"
-        )
+        filter_file(r"\$\(shell pkg-config --cflags xft fontconfig\)", "$(shell pkg-config --cflags xft fontconfig freetype2)", "makefiles/Makefile.linux")
 
     def build(self, spec, prefix):
-        make( str(spack.platforms.host()))
+        make(str(spack.platforms.host()))
 
     def install(self, spec, prefix):
-        make( "DESTDIR=%s" % prefix, "install")
+        make("DESTDIR=%s" % prefix, "install")
 
     def edit(self, spec, prefix):
         # FIXME: Edit the Makefile if necessary

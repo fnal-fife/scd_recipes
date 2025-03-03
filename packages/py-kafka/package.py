@@ -6,6 +6,7 @@
 
 from spack.package import *
 
+
 class PyKafka(PythonPackage):
     """FIXME: Put a proper description of your package here."""
 
@@ -17,7 +18,6 @@ class PyKafka(PythonPackage):
     version("1.3.5", sha256="ffb3348cd918c31344b1a2eb61f692cbc423c83b1b06466a86de3db8a3f6a018")
 
     depends_on("py-setuptools", type="build")
-
 
     def config_settings(self, spec, prefix):
         settings = {}
