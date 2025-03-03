@@ -9,26 +9,29 @@ from spack.package import *
 class FifeUtils(Package):
     """Utility scripts for SAM, etc."""
 
-    homepage = "https://cdcvs.fnal.gov/redmine/projects/fife-utils/wiki"
-    url = "http://cdcvs.fnal.gov/cgi-bin/git_archive.cgi/cvs/projects/fife_utils.v3_6_1.tar"
+    homepage = "https://github.com/fnal-fife/fife-utils/wiki"
+    url = "https://github.com/fnal-fife/fife-utils.git"
+    list_url = "https://github.com/fnal-fife/fife-utils/tags"
 
-    version("3.7.4", sha256="48e5a060a064f1853533f6c6a706aacbd586b89863fe49fc5f4b93ccde7a015d")
-    version("3.7.3", sha256="8e8d45da4911b85b41e6ce00b0107c1c51cc17b27e569157d2c3facd9c25c2e0")
-    version("3.7.2", sha256="2b4344d821e5650eda011e66375c47f808b5584df4ae2a591f345a94cc45711b")
-    version("3.7.0", sha256="8d0efe2e007b0bb821accfad85ad455026fbe59b19f27c80edeb224db66cc74c")
-    version("3.6.1", sha256="7bb1e2aeb703cb9b3ed098416c035509be85896f3891bc87afa14e21fa7132f5")
-    version("3.6.0", sha256="31840ba816d1d79c3734d455c47072cf60677c7c72ed390e386973e0711c9513")
+    version("3.7.4", sha256="c0647db710d1a914c4756440fdfde4e5b537845e018bf05b41758354587e5420")
+    version("3.7.3", sha256="9b0ed7963adb1bae03207a686196bd4171cb2bc38f3530b18d237292abe15154")
+    version("3.7.2", sha256="309b3174e77ed90e5dc155738af702be8e461d957c3dd61c72cb77c6b226c873")
+    version("3.7.0", sha256="1b3396a19b93cd9907ae5f0175973d57f2b37a4c5d95f82ec26109aef198dba3")
+    version("3.6.1", sha256="4086685e4985db55b4081ef28085da5746e5496a3cbf1c9798bdd28b42b70e1b")
+    version("3.6.0", sha256="4cf32203c2382968871d5f959a58106090da954a898255e1979c67db65b72752")
+    version("3.5.1", sha256="7b1463ce9fd275152daaf7b54772c0d6ffaa528f65270af65f17bdf038990fe3")
+
 
     def url_for_version(self, version):
-        urlf = "https://cdcvs.fnal.gov/cgi-bin/git_archive.cgi/cvs/projects/fife_utils.v{0}.tar"
+        urlf = "https://github.com/fnal-fife/fife-utils/archive/refs/tags/v{0}.tar.gz"
         return urlf.format(version.underscored)
 
     depends_on("python", type=("build", "run"))
     depends_on("py-requests", type="run")
     depends_on("sam-web-client", type="run")
-    depends_on("data-dispatcher", type="run")
-    depends_on("metacat", type="run")
-    depends_on("rucio-clients", type="run")
+    depends_on("data-dispatcher", type="run", when="@3.6.0:")
+    depends_on("metacat", type="run", when="@3.6.0:")
+    depends_on("rucio-clients", type="run", when="@3.6.0:")
     depends_on("ifdhc", type="run")
 
     def install(self, spec, prefix):
