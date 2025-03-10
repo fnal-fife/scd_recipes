@@ -45,7 +45,7 @@ class Declad(Package):
     depends_on("sam-web-client")
     depends_on("rucio-clients")
     depends_on("py-jinja2")
-    depends_on("py-fadvise", when="@2.3.3")  # only that one version...
+    #depends_on("py-fadvise", when="@2.3.3")  # only that one version...
 
     def install(self, spec, prefix):
         with working_dir("declad"):
