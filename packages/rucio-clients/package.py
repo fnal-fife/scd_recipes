@@ -17,6 +17,9 @@ class RucioClients(PythonPackage):
 
     # maintainers = ["marcmengel","bari12"]
 
+    version("36.5.0", sha256="6e6090c112eed772449ac2741ce08f533ea20add4ece8d6dbdd87842d18d2079")
+    version("36.4.0", sha256="3a85092e08a4bc17ac23803d390b34471166521fa48f5735b7f1c4560f4743bc")
+    version("35.6.1", sha256="3a07c5791e6248fb1867b097e5b1c6376e5bf89c03a06b8807905ceeccac57c1")
     version("35.4.1", sha256="d87405785776d7522100cda2ebc16892f94cda94d3c257896ee4817c4e03c06b")
     version("35.2.1", sha256="244b2219e4e8e3bc77a347536350ffe3e82be4e8647e8f90df48d233059b5fc5")
     version("34.4.3", sha256="f3fa99f647e5efa7b81167d148254b6ca45bd5fc636f70f78711c10c66c083a1")
