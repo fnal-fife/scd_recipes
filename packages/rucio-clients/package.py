@@ -55,6 +55,8 @@ class RucioClients(PythonPackage):
     depends_on("py-python-magic", type=("build", "run"))
     depends_on("gfal2-python", type=("build", "run"), when="+gfal2")
     depends_on("py-typing-extensions", type=("build", "run"))
+    depends_on("py-packaging", type=("build", "run"), when="@36:")
+    depends_on("py-rich", type=("build", "run"), when="@36:")
 
     #
     # if we're not building a Spack gfal2, try to put a symlink to the
