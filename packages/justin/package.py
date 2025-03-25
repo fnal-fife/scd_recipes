@@ -25,7 +25,12 @@ class Justin(Package):
     depends_on("rucio-clients", type="run")
 
     def install(self, spec, prefix):
-        install_tree(self.stage.source_path.commands, prefix.bin)   
-        install_tree(self.stage.source_path.jobutils, prefix.jobutils)   
-        makedirs(prefix.man)
-        os.system("mv %s/*.1 %s" % (prefix.bin, prefix.man))
+        install_tree(self.stage.source_path + "/commands", prefix.bin)   
+        install_tree(self.stage.source_path + "/jobutils", prefix.jobutils)   
+        makedirs(prefix.man.man1)
+        os.system("mv %s/*.1 %s" % (prefix.bin, prefix.man.man1))
+
+    def setup_run_environment(self, run_env):
+        run_env.prepend_path("PATH", self.prefix.bin)
+        run_env.prepend_path("MANPATH", self.prefix.man)
+
