@@ -17,7 +17,7 @@ class Justin(Package):
 
     maintainers("marcmengel", "Andrew-McNabb-UK", "calcuttj")
 
-    license("Apache-2", checked_by="marcmengel")
+    license("Apache-2")
 
     version("01.03.00", sha256="688b96531c3190b66e4db4c10efb7ccc6e9bcdfad470f4cd6cde934df0d8fb20")
 
