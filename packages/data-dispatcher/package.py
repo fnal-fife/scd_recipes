@@ -11,7 +11,7 @@ import glob
 class DataDispatcher(PythonPackage):
     """Data Dispatcher for processing large filesets"""
 
-    homepage = "https://github.com/ivmfnal/data_dispatcher"
+    homepage = "https://github.com/fermitools/data_dispatcher"
     git = "https://github.com/ivmfnal/data_dispatcher.git"
     pypi = "datadispatcher_client/datadispatcher_client-2.0.1.tar.gz"
     # for older releases (< 2.0)
