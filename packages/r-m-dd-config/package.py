@@ -4,6 +4,7 @@
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
 from spack.package import *
+from llnl.util import tty
 import os
 import sys
 import glob
@@ -50,6 +51,7 @@ class RMDdConfig(BundlePackage):
     version("1.1")
     version("1.2")
     version("1.3")
+    version("1.4")
 
     depends_on("data-dispatcher")
     depends_on("rucio-clients")
@@ -64,7 +66,14 @@ class RMDdConfig(BundlePackage):
         Return a dictionary of handy values to substitute into
         path/url template strings
         """
-        rdict = {"exp": self.spec.variants["experiment"].value, "lab": self.spec.variants["lab"].value, "msuf": "_meta_prod/app", "dsuf": "_dd_prod/data", "asuf": "", "acct": os.environ.get("GRID_USER", os.environ.get("USER", "unk"))}
+        rdict = {
+            "exp": self.spec.variants["experiment"].value,
+            "lab": self.spec.variants["lab"].value,
+            "msuf": "_meta_prod/app",
+            "dsuf": "_dd_prod/data",
+            "asuf": "",
+            "acct": os.environ.get("GRID_USER", os.environ.get("USER", "unk")),
+        }
         # irregularities...
         # can set "acct" per experiment here too if needed...
         if rdict["exp"] == "hypot":
@@ -121,7 +130,7 @@ class RMDdConfig(BundlePackage):
         rucio_cfg = os.path.join(rucio_home, "etc", "rucio.cfg")
 
         if not os.path.exists(rucio_cfg):
-            os.makedirs(os.path.dirname(rucio_cfg))
+            os.makedirs(os.path.dirname(rucio_cfg), exist_ok=True)
             with open(rucio_cfg, "w") as rcf:
                 rcf.write(
                     """
@@ -131,8 +140,22 @@ auth_host = https://%(exp)s-rucio.%(lab)s
 
 ca_cert = /etc/grid-security/certificates
 account = %(acct)s
-auth_type = x509_proxy
+#auth_type = x509_proxy
+auth_type = oidc
+oidc_scope = openid profile email org.cilogon.userinfo wlcg.capabilityset:/%(exp)sana wlcg.groups:/%(exp)s
 request_retries = 3
 """
                     % rdict
+                )
+        else:
+            # if they have a rucio.cfg already, but it doesn't have oidc authentication
+            # warn them.
+            with open(rucio_cfg, "r") as rcf:
+                data = rcf.read()
+            if not data.find("auth_type = oidc") > 0:
+                tty.warn(
+                    f"Your rucio config {rucio_cfg}\n"
+                    "     does not list oidc authentication\n"
+                    "     If you remove it and spack load r-m-dd-config again\n"
+                    "     it will get regenerated with oidc (Token) authentication"
                 )
