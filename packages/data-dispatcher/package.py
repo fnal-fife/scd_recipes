@@ -11,12 +11,16 @@ import glob
 class DataDispatcher(PythonPackage):
     """Data Dispatcher for processing large filesets"""
 
-    homepage = "https://github.com/ivmfnal/data_dispatcher"
-    pypi = "datadispatcher/datadispatcher-1.15.2.tar.gz"
+    homepage = "https://github.com/fermitools/data_dispatcher"
     git = "https://github.com/ivmfnal/data_dispatcher.git"
+    pypi = "datadispatcher_client/datadispatcher_client-2.0.1.tar.gz"
+    # for older releases (< 2.0)
+    # pypi = "datadispatcher/datadispatcher-1.15.2.tar.gz"
 
     maintainers = ["marcmengel", "ivmfnal"]
 
+    version("2.0.2", sha256="ba6d676a9061619244e4cb3ad29bc401fdf611b00fb11da311b3ab8da264ac60")
+    version("2.0.1", sha256="ae404f75300e39015c259010d37228cf291b136db0bd4f770dff6e7e5b4a69d6") 
     version("1.25.1m", sha256="100b5e210118fb817bcfd3df91e9920d29423d6690452419e823f611a711cb52", url="https://github.com/marcmengel/data_dispatcher/archive/refs/tags/v1.21.1m.tar.gz")
 
     version("1.27.0", sha256="272d5719db3834ced9a5c5a1c97cb815b4def8e8c2d4f4f44f3255489600d0c1")
@@ -41,7 +45,8 @@ class DataDispatcher(PythonPackage):
     def remove_extra_name(self):
         # data-dispatcher installs identicaly "ddint" and "dd", but the
         # latter obscures /bin/dd and breaks ifdhc...
-        os.unlink(self.spec.prefix.bin.dd)
+        if os.path.exists(self.spec.prefix.bin.dd):
+            os.unlink(self.spec.prefix.bin.dd)
 
     def setup_run_environment(self, run_env):
         run_env.prepend_path("PATH", self.spec.prefix.bin)

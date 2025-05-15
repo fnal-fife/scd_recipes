@@ -16,6 +16,7 @@ class Metacat(PythonPackage):
 
     maintainers = ["marcmengel", "ivmfnal"]
 
+    version("4.1.0", sha256="4c7ebdf5eeed52a731d3286fea72bfd0037f952e6aafa33f0f18fc1cc3f35f59")
     version("4.0.2", sha256="84b46108779db6e3c9d2bd8f68a2ab5326c05ffaec7d40986dcc18219f9f799e")
     version("4.0.1.1", sha256="477271395ad2a12de716bf6ff8cbe5e21392e6fbfa4ad94b6fa7141aa8c4b9ba")
     version("4.0.1", sha256="477271395ad2a12de716bf6ff8cbe5e21392e6fbfa4ad94b6fa7141aa8c4b9ba")

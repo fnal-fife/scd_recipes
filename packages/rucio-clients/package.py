@@ -17,6 +17,7 @@ class RucioClients(PythonPackage):
 
     # maintainers = ["marcmengel","bari12"]
 
+    version("37.0.0", sha256="c37a0570c54574f06926679967031e9fc418e18c51094631890b83ed4007554c")
     version("36.5.0", sha256="6e6090c112eed772449ac2741ce08f533ea20add4ece8d6dbdd87842d18d2079")
     version("36.4.0", sha256="3a85092e08a4bc17ac23803d390b34471166521fa48f5735b7f1c4560f4743bc")
     version("35.6.1", sha256="3a07c5791e6248fb1867b097e5b1c6376e5bf89c03a06b8807905ceeccac57c1")
@@ -55,6 +56,9 @@ class RucioClients(PythonPackage):
     depends_on("py-python-magic", type=("build", "run"))
     depends_on("gfal2-python", type=("build", "run"), when="+gfal2")
     depends_on("py-typing-extensions", type=("build", "run"))
+    depends_on("py-packaging", type=("build", "run"), when="@36:")
+    depends_on("py-rich", type=("build", "run"), when="@36:")
+    depends_on("py-click", type=("build", "run"), when="@37:")
 
     #
     # if we're not building a Spack gfal2, try to put a symlink to the
