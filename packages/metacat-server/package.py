@@ -7,23 +7,17 @@ from spack import *
 import os
 
 
-class DataDispatcherServer(Package):
+class MetacatServer(Package):
     """Client package for SAM data management system webservice"""
 
-    homepage = "https://github.com/fermitools/data_dispatcher"
-    url = "https://github.com/fermitools/data_dispatcher/archive/refs/tags/1.26.4.tar.gz"
-    git = "https://github.com/fermitools/data_dispatcher.git"
+    homepage = "https://github.com/fermitools/metacat"
+    url = "https://github.com/fermitools/metacat/archive/refs/tags/4.0.0.tar.gz"
 
-    version("2.0.2", sha256="ed517a202b0860562623d45cfa4d83141bf0ad36fd4220cdaf54f1d5878d5f1f")
-    version("2.0.1", sha256="176605877772f72af4b2b9e8442b9285e0d56dc2693f1a71aa1fb8ab44bad63c")
-    version("1.26.4", sha256="1bd1b5433a7e3d9b29917510531225abee17e8690d87d9eb0ccff2ad58cd72c9")
-    version("1.26.2", sha256="0eaf99e65b5d5664a6524f81d31f387324bbe881570a0421532f24cefb7169c2")
-    version("1.26.0", sha256="2d56d4c688bcd44c72887fa009875935402890d69c872399fe3112e4096483f7")
-    version("main",   branch="main")
+    version("4.0.0", sha256="49836df3b7f2028c9b88c95a6904322373a9192d863e6756aec332bbe414fe85")
 
 
     def url_for_version(self, version):
-        url = "https://github.com/fermitools/data_dispatcher/archive/refs/tags/{0}.tar.gz"
+        url = "https://github.com/fermitools/metacat/archive/refs/tags/{0}.tar.gz"
         return url.format(version.underscored)
 
     depends_on("python")
@@ -35,8 +29,8 @@ class DataDispatcherServer(Package):
     depends_on("py-stompymq")
     depends_on("py-webpie")
     depends_on("py-wsdbtools")
-    depends_on("metacat")
-    depends_on("rucio-clients")
+    depends_on("py-scitokens")
+    depends_on("rucio-clients") # do we need this?
 
     def install(self, spec, prefix):
         with working_dir(self.stage.source_path):
