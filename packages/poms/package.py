@@ -1,14 +1,15 @@
-from spack import *
+from spack.package import *
 
 
 class Poms(PythonPackage):
     """Production Operations Management System"""
 
     # FIXME: Add a proper url for your package's homepage here.
-    homepage = "http://cdcvs.fnal.gov/redmine/projects/prod_mgmt_db"
-    url = "http://cdcvs.fnal.gov/cgi-bin/git_archive.cgi/cvs/projects/prod_mgmt_db.v4_1_0.tar"
+    homepage = "http://github.com/fermitools/poms"
+    url = "https://github.com/fermitools/poms/archive/refs/tags/v4_4_2.tar.gz"
 
     # FIXME: Add proper versions and checksums here.
+    version("4_4_2", sha256="d5b2d602072af08a46343a59d8ecad1c6daec8fd5fb351f8a91eb5164311c2e7")
     version("4_1_2", "8c44623b2fcc78ac2120fb5a185917de")
     version("4_1_0", "c8682135a0d4eae8df00a29ececb6020")
     version("4_2_0", "cf496f78f5e988684d32afa352b0c77b")

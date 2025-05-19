@@ -17,10 +17,14 @@ class Buildmanager(Package):
 
     license("Apache")
 
-    version("1_12", sha256="575852e0c35e343b73ed1940da25976380d340966df48f2f2bb7e91a286a525d")
+    version("1.12", sha256="8344af340bd475f88920484bd07237beeb96a36362005d9dc1259635111dca80")
 
     depends_on("tk")
     depends_on("expect")
+
+    def url_for_version(self, version):
+        urlf = "https://github.com/marcmengel/buildmanager/archive/refs/tags/v{}.tar.gz"
+        return urlf.format(version.underscored)
 
     def install(self, spec, prefix):
         install_tree(self.stage.source_path, prefix)

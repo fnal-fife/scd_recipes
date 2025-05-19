@@ -3,7 +3,7 @@
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
-from spack import *
+from spack.package import *
 import os
 
 
@@ -19,9 +19,7 @@ class Gsoap(AutotoolsPackage):
         # these days sourceforge only has a URL that ends in the zip file if you followed
         # the download link recently:
         # so we have curl ping that and then take from where it sends you...
-        fetch_first = (
-            "https://sourceforge.net/projects/gsoap2/files/gsoap_%s.zip/download" % version
-        )
+        fetch_first = "https://sourceforge.net/projects/gsoap2/files/gsoap_%s.zip/download" % version
         os.system("curl --output /dev/null --silent --max-redirs 0 '%s'" % fetch_first)
         return "https://downloads.sourceforge.net/project/gsoap2/gsoap_%s.zip" % version
 

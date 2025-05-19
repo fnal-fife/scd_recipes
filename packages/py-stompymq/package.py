@@ -7,6 +7,7 @@
 from spack.package import *
 import glob
 
+
 class PyStompymq(PythonPackage):
     """FIXME: Put a proper description of your package here."""
 

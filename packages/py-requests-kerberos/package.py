@@ -13,7 +13,9 @@ class PyRequestsKerberos(PythonPackage):
     homepage = "https://github.com/requests/requests-kerberos"
     pypi = "requests-kerberos/requests-kerberos-0.14.0.tar.gz"
 
-    maintainers = ["marcmengel",]
+    maintainers = [
+        "marcmengel",
+    ]
 
     version("0.14.0", sha256="cda9d1240ae5392e081869881c8742d0e171fd6a893a7ac0875db2748e966fd1")
 
