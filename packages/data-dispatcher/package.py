@@ -21,7 +21,7 @@ class DataDispatcher(PythonPackage):
 
     version("2.0.3", sha256="2671eaec02ccd2ebbe286965d633da9a326584e6626fff29226898add97f695c")
     version("2.0.2", sha256="ba6d676a9061619244e4cb3ad29bc401fdf611b00fb11da311b3ab8da264ac60")
-    version("2.0.1", sha256="ae404f75300e39015c259010d37228cf291b136db0bd4f770dff6e7e5b4a69d6") 
+    version("2.0.1", sha256="ae404f75300e39015c259010d37228cf291b136db0bd4f770dff6e7e5b4a69d6")
     version("1.25.1m", sha256="100b5e210118fb817bcfd3df91e9920d29423d6690452419e823f611a711cb52", url="https://github.com/marcmengel/data_dispatcher/archive/refs/tags/v1.21.1m.tar.gz")
 
     version("1.27.0", sha256="272d5719db3834ced9a5c5a1c97cb815b4def8e8c2d4f4f44f3255489600d0c1")
