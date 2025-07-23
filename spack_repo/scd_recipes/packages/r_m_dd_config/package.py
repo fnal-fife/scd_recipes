@@ -5,7 +5,7 @@
 
 from spack_repo.builtin.build_systems.bundle import BundlePackage
 from spack.package import *
-from llnl.util import tty
+from spack.llnl.util import tty
 import os
 import sys
 import glob
