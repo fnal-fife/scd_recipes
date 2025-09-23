@@ -14,6 +14,7 @@ class MetacatServer(Package):
     homepage = "https://github.com/fermitools/metacat"
     url = "https://github.com/fermitools/metacat/archive/refs/tags/4.0.0.tar.gz"
 
+    version("4.1.2", sha256="ff1c71c4f62ce689b6eea39af840e8e26f69de1fcf2f387dacf1e753e61d49d2") 
     version("4.0.2", sha256="be5151cc5265053061173cbe26dd20928b6a4d4fb7f9a4639436094a2d88ab62") 
     version("4.0.0", sha256="49836df3b7f2028c9b88c95a6904322373a9192d863e6756aec332bbe414fe85")
 
