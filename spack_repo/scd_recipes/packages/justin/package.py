@@ -10,17 +10,17 @@ from spack.package import *
 import os
 
 class Justin(Package):
-    """DUNE-Justin workflow manager client package """
+    """justIN DUNE workflow system clients"""
 
-    homepage = "https://justin.dune.hep.ac.uk/"
+    homepage = "https://dunejustin.fnal.gov/"
 
-    url = "https://github.com/DUNE/dune-justin/archive/refs/tags/01.03.00.tar.gz"
+    url = "https://github.com/DUNE/dune-justin/archive/refs/tags/01.05.01.tar.gz"
 
-    maintainers("marcmengel", "Andrew-McNabb-UK", "calcuttj")
+    maintainers("marcmengel", "Andrew-McNab-UK", "calcuttj")
 
     license("Apache-2")
 
-    version("01.03.00", sha256="688b96531c3190b66e4db4c10efb7ccc6e9bcdfad470f4cd6cde934df0d8fb20")
+    version("01.05.01", sha256="688b96531c3190b66e4db4c10efb7ccc6e9bcdfad470f4cd6cde934df0d8fb20")
 
     depends_on("python@3.3:", type=("build", "run"))
     depends_on("rucio-clients", type="run")
