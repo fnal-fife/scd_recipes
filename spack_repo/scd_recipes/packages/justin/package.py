@@ -14,7 +14,7 @@ class Justin(Package):
 
     homepage = "https://dunejustin.fnal.gov/"
 
-    url = "https://github.com/DUNE/dune-justin/archive/refs/tags/01.05.01.tar.gz"
+    url = "https://github.com/DUNE/dune-justin/archive/refs/tags/01.05.02.tar.gz"
 
     maintainers("marcmengel", "Andrew-McNab-UK", "calcuttj")
 
