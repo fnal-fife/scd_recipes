@@ -57,6 +57,7 @@ class RMDdConfig(BundlePackage):
     version("1.7")
     version("1.8")
     version("1.9")
+    version("1.10")
 
     depends_on("data-dispatcher")
     depends_on("rucio-clients")
@@ -147,7 +148,6 @@ ca_cert = /etc/grid-security/certificates
 account = %(acct)s
 #auth_type = x509_proxy
 auth_type = oidc
-oidc_scope = openid profile email org.cilogon.userinfo wlcg.capabilityset:/%(exp)sana wlcg.groups:/%(exp)s
 request_retries = 3
 """
                     % rdict
