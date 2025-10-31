@@ -13,6 +13,7 @@ class FifeUtils(Package):
     url = "https://github.com/fnal-fife/fife-utils.git"
     list_url = "https://github.com/fnal-fife/fife-utils/tags"
 
+    version("3.7.8", sha256="10c0f07b3cd1e64cd573153df09a301146aa70f9a0789b659bea83cefc24799c")
     version("3.7.7", sha256="96e940926b58ec21876a92e262b277fda161907e1c561fec592789e34c61f221")
     version("3.7.6", sha256="25118f791516751a410a9b1ba2a42b7ea425764f135b50628c8657c3ebea8e81")
     version("3.7.5", sha256="81b18626b30a03fa63cbcfd13f8959c362bed0871c7c3e828a1ff0b4e9bf783e")
