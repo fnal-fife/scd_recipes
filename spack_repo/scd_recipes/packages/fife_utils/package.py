@@ -13,6 +13,7 @@ class FifeUtils(Package):
     homepage = "https://github.com/fnal-fife/fife-utils/wiki"
     url = "https://github.com/fnal-fife/fife-utils.git"
     list_url = "https://github.com/fnal-fife/fife-utils/tags"
+    git = "https://github.com/fnal-fife/fife-utils.git"
 
     version("3.7.7", sha256="96e940926b58ec21876a92e262b277fda161907e1c561fec592789e34c61f221")
     version("3.7.6", sha256="25118f791516751a410a9b1ba2a42b7ea425764f135b50628c8657c3ebea8e81")
@@ -24,6 +25,7 @@ class FifeUtils(Package):
     version("3.6.1", sha256="4086685e4985db55b4081ef28085da5746e5496a3cbf1c9798bdd28b42b70e1b")
     version("3.6.0", sha256="4cf32203c2382968871d5f959a58106090da954a898255e1979c67db65b72752")
     version("3.5.1", sha256="7b1463ce9fd275152daaf7b54772c0d6ffaa528f65270af65f17bdf038990fe3")
+    version("develop", branch="develop", get_full_repo=True)
 
 
     def url_for_version(self, version):

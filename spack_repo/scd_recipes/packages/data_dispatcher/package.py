@@ -36,6 +36,7 @@ class DataDispatcher(PythonPackage):
     version("1.15.1", sha256="b8ccc107b4b10a1a9253d1859e6fcef69b05bddf8e598977ea0078cdf4798ed7")
     version("1.15.0", sha256="aede4a3ec1a3ee79f8bd38448fd485e513ca303414d3f96cff74b72ae3c763e5")
     version("main", branch="main")
+    version("develop", branch="develop")
 
     # the 3.7 versioning actually comes from the metacat docs...
     depends_on("python@3.7:", type=("build", "run"))
