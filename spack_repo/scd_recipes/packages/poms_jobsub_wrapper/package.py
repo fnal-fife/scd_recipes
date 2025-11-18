@@ -18,7 +18,6 @@ class PomsJobsubWrapper(Package):
     version("4.5.0", sha256="7e7ccad6d22aa48e38f9854823c407d68d68d22f41bdb6eae9cd7fda4bc83ec2")
 
     def url_for_version(self, version):
-        print("in poms-jobsub-wrapper url_for_version:", str(version))
         url = "https://github.com/fermitools/poms/archive/refs/tags/wrapper_v{0}.tar.gz"
         return url.format(version.underscored)
 
