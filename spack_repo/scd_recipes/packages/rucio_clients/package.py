@@ -18,7 +18,8 @@ class RucioClients(PythonPackage):
 
     # maintainers = ["marcmengel","bari12"]
 
-    version("38.5.1", sha256="3cfe97c5e5996cfc5861b259ff0bed3369e7379bcaa826b6d181ee5b939ac401")
+    version("39.0.0", sha256="a83632897cfc2cc9052848b1b795fb71b2cf8d0a7920a6cff1f7367874bac72a")
+    version("38.5.1", sha256="3cfe97c5e5996cfc5861b259ff0bed3369e7379bcaa826b6d181ee5b939ac401", preferred=True)
     version("38.3.0", sha256="49f8809b5378d1c9e9edc5f1a74fbf7eebe45db27084945f748b2c73a841efed")
     version("38.2.0", sha256="7495d7274e17e4099f9ccd2672667236e17f806292954387145e99c7c688414a") 
     version("37.0.0", sha256="c37a0570c54574f06926679967031e9fc418e18c51094631890b83ed4007554c")
@@ -41,12 +42,12 @@ class RucioClients(PythonPackage):
             urlf = urlf.replace("rucio-clients", "rucio_clients")
         return urlf.format(version)
 
-    variant("gfal2", default=False)
+    variant("gfal2", default=False, description="depend on Spack-built gfal2 packages")
 
     depends_on("py-setuptools", type=("build"))
     depends_on("py-pip", type="build")
 
-    depends_on("python", type=("build", "run"))
+    depends_on("python @:3.10.99", type=("build", "run"))
     depends_on("py-requests", type=("build", "run"))
     depends_on("py-urllib3", type=("build", "run"))
     depends_on("py-dogpile-cache", type=("build", "run"))
