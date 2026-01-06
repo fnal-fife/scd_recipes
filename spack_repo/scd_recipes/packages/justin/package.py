@@ -25,7 +25,7 @@ class Justin(Package):
     version("01.03.00", sha256="688b96531c3190b66e4db4c10efb7ccc6e9bcdfad470f4cd6cde934df0d8fb20")
 
     depends_on("python@3.6:", type=("build", "run"))
-    depends_on("rucio-clients", type="run")
+    depends_on("py-rucio-clients", type=("build", "run"))
 
     def install(self, spec, prefix):
         install_tree(self.stage.source_path + "/commands", prefix.bin)   
