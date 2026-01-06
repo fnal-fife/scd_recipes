@@ -37,7 +37,7 @@ class FifeUtils(Package):
     depends_on("sam-web-client", type="run")
     depends_on("data-dispatcher", type="run", when="@3.6.0:")
     depends_on("metacat", type="run", when="@3.6.0:")
-    depends_on("rucio-clients", type="run", when="@3.6.0:")
+    depends_on("py-rucio-clients", type="run", when="@3.6.0:")
     depends_on("ifdhc", type="run")
 
     def install(self, spec, prefix):
