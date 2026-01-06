@@ -42,7 +42,7 @@ class GlobusToolkit(AutotoolsPackage):
         "autoconf@2.69", type="build"
     )  # doesnt seem to work with other versions...
     depends_on("automake", type="build")
-    depends_on("libtool@2.4.2", type="build")
+    depends_on("libtool", type="build")
     depends_on("openssl")
 
     def autoreconf(self, spec, prefix):
