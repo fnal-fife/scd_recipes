@@ -33,7 +33,7 @@ class MetacatServer(Package):
     depends_on("py-webpie")
     depends_on("py-wsdbtools")
     depends_on("py-scitokens")
-    depends_on("rucio-clients") # do we need this?
+    depends_on("py-rucio-clients") # do we need this?
 
     def install(self, spec, prefix):
         with working_dir(self.stage.source_path):

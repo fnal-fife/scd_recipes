@@ -36,7 +36,7 @@ class DataDispatcherServer(Package):
     depends_on("py-webpie")
     depends_on("py-wsdbtools")
     depends_on("metacat")
-    depends_on("rucio-clients")
+    depends_on("py-rucio-clients")
 
     def install(self, spec, prefix):
         with working_dir(self.stage.source_path):
