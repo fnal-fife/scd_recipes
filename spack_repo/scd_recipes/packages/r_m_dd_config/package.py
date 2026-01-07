@@ -58,7 +58,7 @@ class RMDdConfig(BundlePackage):
     version("1.7")
 
     depends_on("data-dispatcher")
-    depends_on("rucio-clients")
+    depends_on("py-rucio-clients")
     depends_on("metacat")
 
     variant("experiment", values=explist, default=defexp)
