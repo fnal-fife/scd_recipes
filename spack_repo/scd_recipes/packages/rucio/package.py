@@ -25,7 +25,7 @@ class Rucio(PythonPackage):
 
     depends_on("py-requests", type=("build", "run"))
     depends_on("py-urllib3", type=("build", "run"))
-    depends_on("py-dogpile.cache", type=("build", "run"))
+    depends_on("py-dogpile-cache", type=("build", "run"))
     depends_on("py-tabulate", type=("build", "run"))
     depends_on("py-jsonschema", type=("build", "run"))
     depends_on("py-paramiko", type=("build", "run"))
