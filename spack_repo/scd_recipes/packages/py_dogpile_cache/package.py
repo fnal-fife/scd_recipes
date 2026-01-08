@@ -19,6 +19,7 @@ class PyDogpileCache(PythonPackage):
         "marcmengel",
     ]
 
+    version("1.2.2", sha256="fd9022c0d9cbadadf20942391a95adaf296be80b42daa8e202f8de1c21f198b2")
     version("1.1.8", sha256="d844e8bb638cc4f544a4c89a834dfd36fe935400b71a16cbd744ebdfb720fd4e")
 
     depends_on("py-setuptools", type="build")
