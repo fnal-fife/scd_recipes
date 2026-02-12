@@ -26,6 +26,7 @@ class MetacatServer(Package):
         return url.format(version.underscored)
 
     depends_on("python")
+    depends_on("py-pyyaml")
     depends_on("py-kafka")
     depends_on("py-lark")
     depends_on("py-pyjwt")
