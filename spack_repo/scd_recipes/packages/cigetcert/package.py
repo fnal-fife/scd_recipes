@@ -25,6 +25,8 @@ class Cigetcert(PythonPackage):
         sha256="31831bb6f26ed2f43ee10b5d3c2529c26eb1fb52ca9b9f9fabdd547c25593525",
     )
 
+    extends("python")
+
     depends_on("python", type=("build", "run"))
     depends_on("py-setuptools", type="build")
     depends_on("py-lxml")
