@@ -11,6 +11,7 @@ import sys
 import glob
 
 explist = [
+    "amsc",
     "hypot",
     "annie",
     "dune",
@@ -56,6 +57,8 @@ class RMDdConfig(BundlePackage):
     version("1.5")
     version("1.6")
     version("1.7")
+    version("1.8")
+    version("1.9")
 
     depends_on("data-dispatcher")
     depends_on("py-rucio-clients")
