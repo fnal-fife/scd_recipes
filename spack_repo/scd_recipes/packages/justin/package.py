@@ -20,6 +20,7 @@ class Justin(Package):
 
     license("Apache-2")
 
+    version("01.06.05", sha256="5c999b09722c401837a5a0617ea38264c41a22ce6dd49fa8f72a53f1f164f707")
     version("01.06.04", sha256="d09b998507047c786262caa1d3cd75fa292a3ffc09d0dec701bd119e01f33f93")
     version("01.06.03", sha256="0e9f72f9e1c8f869af7f42415def5644d8f08c523b6c527b68f580ee778fd564")
     version("01.06.01", sha256="56946816a47b89d8ec4c44a6bd36ba1ddc4f27b1ac728949d6ed115f8b66569e")
