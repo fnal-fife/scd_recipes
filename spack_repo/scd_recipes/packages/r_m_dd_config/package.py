@@ -77,7 +77,7 @@ class RMDdConfig(BundlePackage):
         # irregularities...
         # can set "acct" per experiment here too if needed...
         if rdict["exp"] == "hypot":
-            rdict["msuf"] = "_meta_dev/app"Slack
+            rdict["msuf"] = "_meta_dev/app"
             rdict["dsuf"] = "_dd/data"
             rdict["asuf"] = "_dev"
 
