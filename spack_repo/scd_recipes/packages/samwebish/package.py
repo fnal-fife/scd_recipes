@@ -11,8 +11,8 @@ class Samwebish(Package):
     """Emulate SAM with metacat/declad/rucio"""
 
     homepage = "https://github.com/marcmengel/samwebish/"
-    url = "https://github.com/marcmengel/samwebish/archive/refs/tags/v2.0.1.tar.gz"
-    git = "https://github.com/marcmengel/samwebish.git"
+    url = "https://github.com/fnal-fife/samwebish/archive/refs/tags/v2.0.1.tar.gz"
+    git = "https://github.com/fnal-fife/samwebish.git"
 
     version("main", branch="main")
     version("develop", branch="main")
@@ -20,7 +20,7 @@ class Samwebish(Package):
     version("0.4.alpha", sha256="f12611a51e9e51475c2343404e43d679a15fac8644793c75fab678b333a437fb")
 
     def url_for_version(self, version):
-        url = "https://github.com/marcmengel/samwebish/archive/refs/tags/{0}{1}.tar.gz"
+        url = "https://github.com/fnal-fife/samwebish/archive/refs/tags/{0}{1}.tar.gz"
         prefix = ""
         vstr = str(version)
         return url.format(prefix, vstr)

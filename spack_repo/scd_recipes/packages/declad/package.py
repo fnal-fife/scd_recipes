@@ -17,6 +17,7 @@ class Declad(Package):
     version("main", branch="main")
     version("develop", branch="main")
 
+    version("2.3.8", sha256="fc97e60c20f9305107ddabc2a7efea56ccabb7a76467c14dadaa44ad6df4a226")  
     version("2.3.6", sha256="b8452338842d117333995441c1d045afa2d8d29c781a975aa0be8e5597caf18a")
     version("2.3.5", sha256="966ec4b7658a2b681faad63fbe28267cd0ea792f5e07ab951e6792677aabc803")
     version("2.3.4", sha256="0f25ffc4f6c9110fae3b85330ac27065cb963b8662df134136dbdfd0aa4fd94f")
@@ -41,6 +42,7 @@ class Declad(Package):
             vstr = str(version)
         return url.format(prefix, vstr)
 
+    depends_on("gmake", type="build")
     depends_on("py-webpie")
     depends_on("metacat")
     depends_on("sam-web-client")
