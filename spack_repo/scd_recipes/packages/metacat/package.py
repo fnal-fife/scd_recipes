@@ -15,8 +15,9 @@ class Metacat(PythonPackage):
     pypi = "metacat-client/metacat_client-4.0.1.tar.gz"
     git = "https://github.com/fermitools/metacat.git"
 
-    maintainers = ["marcmengel", "ivmfnal"]
+    maintainers = ["marcmengel", "alisonpeisker"]
 
+    version("4.1.6", sha256="83540963bf45b5253d29de62ba27a8534c1335bbde5c2f6aaa176d2d72134db4")
     version("4.1.5", sha256="0fc59bc0f8b834c19204010125124b8196115698197b5a46a6cd24f7b1ed02a1")
     version("4.1.4", sha256="37344baf0c91ec974d6f123306f86f02c38e9a8c38119652da0537b11117e45c")
     version("4.1.3", sha256="7605dba55c9ea63241f21a483859e7a2d54924d96f34f8b4ab51a85a89c3446b")
