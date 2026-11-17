@@ -42,7 +42,7 @@ class DataDispatcher(PythonPackage):
     depends_on("python@3.7:", type=("build", "run"))
     depends_on("py-setuptools", type="build")
     depends_on("py-requests", type=("build", "run"))
-    depends_on("metacat@3.9.3:", type=("build", "run"))
+    depends_on("metacat", type=("build", "run"))
 
     @run_after("install")
     def remove_extra_name(self):
