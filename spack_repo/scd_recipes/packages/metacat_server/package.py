@@ -14,6 +14,9 @@ class MetacatServer(Package):
     homepage = "https://github.com/fermitools/metacat"
     url = "https://github.com/fermitools/metacat/archive/refs/tags/4.0.0.tar.gz"
 
+    version("4.1.5", sha256="9cef0064de9d8c6eed082b6bd0c21f696de0fb44e934284fd6b2a57b32bd8d99")
+    version("4.1.4", sha256="6de6562ed61820e0e41a57b0fb0bcb49d6103d02bbfeaaa32368ee74702cb6c4")
+    version("4.1.3", sha256="058095e697a422241925367a22c386a6a6f31d0e33ebaa7e0aa27bbdd08b0f45")
     version("4.1.2", sha256="ff1c71c4f62ce689b6eea39af840e8e26f69de1fcf2f387dacf1e753e61d49d2") 
     version("4.0.2", sha256="be5151cc5265053061173cbe26dd20928b6a4d4fb7f9a4639436094a2d88ab62") 
     version("4.0.0", sha256="49836df3b7f2028c9b88c95a6904322373a9192d863e6756aec332bbe414fe85")
@@ -24,6 +27,7 @@ class MetacatServer(Package):
         return url.format(version.underscored)
 
     depends_on("python")
+    depends_on("py-pyyaml")
     depends_on("py-kafka")
     depends_on("py-lark")
     depends_on("py-pyjwt")
@@ -34,6 +38,7 @@ class MetacatServer(Package):
     depends_on("py-wsdbtools")
     depends_on("py-scitokens")
     depends_on("py-rucio-clients") # do we need this?
+    depends_on("py-python-ldap") # for auth server...
 
     def install(self, spec, prefix):
         with working_dir(self.stage.source_path):
